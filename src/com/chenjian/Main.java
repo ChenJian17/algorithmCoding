@@ -32,23 +32,4 @@ public class Main {
 
     }
 
-//    public void backtracking(String num, int index){
-//        if (index == num.length()){
-//            String str = num.substring(index);
-//            int tmp = Integer.valueOf(str);
-//            if (((tmp >> 1)&1) == 1){
-//                res = Math.max(res, tmp);
-//            }
-//            return;
-//        }
-//
-//
-//        for (int i = index; i<num.length();i++){
-//
-//        }
-//        backtracking(num, index);
-//        backtracking(num, index+1);
-//
-//
-//    }
 }
