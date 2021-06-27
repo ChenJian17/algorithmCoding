@@ -1,4 +1,4 @@
-package com.chenjian.cn;//从上到下按层打印二叉树，同一层的节点按从左到右的顺序打印，每一层打印到一行。
+package com.chenjian.cn.pointOffer;//从上到下按层打印二叉树，同一层的节点按从左到右的顺序打印，每一层打印到一行。
 //
 // 
 //

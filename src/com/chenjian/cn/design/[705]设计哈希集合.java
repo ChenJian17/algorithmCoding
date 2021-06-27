@@ -1,4 +1,4 @@
-package com.chenjian.cn;//不使用任何内建的哈希表库设计一个哈希集合（HashSet）。
+package com.chenjian.cn.design;//不使用任何内建的哈希表库设计一个哈希集合（HashSet）。
 //
 // 实现 MyHashSet 类： 
 //

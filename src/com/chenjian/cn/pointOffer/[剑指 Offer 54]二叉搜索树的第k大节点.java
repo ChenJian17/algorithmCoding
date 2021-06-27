@@ -1,4 +1,4 @@
-package com.chenjian.cn;//给定一棵二叉搜索树，请找出其中第k大的节点。
+package com.chenjian.cn.pointOffer;//给定一棵二叉搜索树，请找出其中第k大的节点。
 //
 // 
 //
