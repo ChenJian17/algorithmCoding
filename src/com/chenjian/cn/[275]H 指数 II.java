@@ -27,31 +27,33 @@ package com.chenjian.cn;//给定一位研究者论文被引用次数的数组（
 // 你可以优化你的算法到对数时间复杂度吗？ 
 // 
 // Related Topics 数组 二分查找 
-// 👍 110 👎 0
+// 👍 140 👎 0
 
-
-import java.util.Arrays;
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution275 {
     public int hIndex(int[] citations) {
-
-        Arrays.sort(citations);
-        int h =0;
-        for (int i=citations.length-1; i>=0; i--){
-           if (citations[i]>h){
-               i--;
-               h++;
-           }else
-               break;
-
+        int n = citations.length;
+        int l =0, r = n;
+        while (l < r){
+            int mid = l+r+1>>1;
+            if (check(citations,mid))
+                l = mid;
+            else
+                r = mid-1;
         }
-        return h;
+        return r;
 
     }
 
-    public static void main(String[] args) {
-        new Solution275().hIndex(new int[]{1,1,3});
+    boolean check(int[] cs, int mid){
+        int ans = 0;
+        for (int i: cs){
+            if (i>=mid)
+                ans++;
+        }
+        return ans>=mid;
+
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

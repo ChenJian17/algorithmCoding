@@ -61,7 +61,7 @@ class MaxQueue {
     public int pop_front() {
         if (queue.isEmpty())
             return -1;
-        if (queue.peek() == max.peekFirst())
+        if (queue.peek().equals(max.peekFirst()))
             max.pollFirst();
         return queue.poll();
     }
