@@ -10,5 +10,11 @@ import java.util.HashMap;
  * @Description: 堆排序
  */
 public class heapSort {
-    HashMap map = new HashMap();
+    public static void main(String[] args) {
+        HashMap map = new HashMap();
+        map.put(1,2);
+        for (int i =0; i<8; i++)
+            map.put(1,2);
+    }
+
 }

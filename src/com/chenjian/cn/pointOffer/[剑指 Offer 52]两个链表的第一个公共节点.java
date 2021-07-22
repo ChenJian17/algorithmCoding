@@ -76,7 +76,7 @@ import com.chenjian.cn.util.ListNode;
  *     }
  * }
  */
-public class Solution52_offer {
+class Solution52_offer {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         ListNode first = headA, two = headB;
         while (first != two){
