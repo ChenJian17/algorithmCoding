@@ -47,7 +47,7 @@ class Solution51 {
             }
         }
 
-        while (left <= start){
+        while (left <= mid){
             temp[cur++] = nums[left++];
         }
         while (right <= end){
