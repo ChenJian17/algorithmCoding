@@ -17,8 +17,10 @@ public class quickSort {
         while (left < right){
             while (left < right && nums[right] >= pivot)
                 right --;
+            nums[left] = nums[right];
             while (left < right && nums[left] <= pivot)
                 left ++;
+            nums[right] = nums[left];
         }
         nums[left] = pivot;
         partition(nums,start,left-1);

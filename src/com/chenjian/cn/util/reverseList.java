@@ -23,13 +23,13 @@ public class reverseList {
         }
         return headNode.next;
 
-
     }
 
 
-    //尾插法，也叫双指针迭代
+    //尾插法，也叫双指针迭代，相当于直接改变指针指向
     public ListNode reverse2(ListNode head){
-        if (head == null) return null;
+        if (head == null)
+            return null;
         ListNode pre = null;
         ListNode cur = head;
         while (cur != null){
