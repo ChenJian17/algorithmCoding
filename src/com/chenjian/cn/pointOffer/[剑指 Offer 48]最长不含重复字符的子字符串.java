@@ -78,6 +78,22 @@ class Solution48_offer {
 
     }
 
+    public int lengthOfLongestSubstring3(String s){
+        int left = 0, right = 0;
+        Set<Character> set = new HashSet<>();
+        int count = 0;
+        while (right < s.length()){
+            char c = s.charAt(right++);
+
+            while (set.contains(c)){
+                set.remove(s.charAt(left++));
+            }
+            set.add(c);
+            count = Math.max(count,right-left);
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
         new Solution48_offer().lengthOfLongestSubstring("abcabcbb");
     }
