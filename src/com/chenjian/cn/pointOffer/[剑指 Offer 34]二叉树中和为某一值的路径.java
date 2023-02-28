@@ -60,47 +60,62 @@ import java.util.*;
  * }
  */
 class Solution34 {
+//    List<List<Integer>> res = new ArrayList<>();
+//
+//    public List<List<Integer>> pathSum(TreeNode root, int target) {
+//        if (root == null)
+//            return res;
+//
+//        DFS(root,target,0,new ArrayList<>());
+//        return res;
+//    }
+//
+//    public void DFS(TreeNode root, int target, int sum, List<Integer> path){
+//        if (sum+root.val == target && root.left == null && root.right == null){
+//            path.add(root.val);
+//            res.add(path);
+//            return;
+//        }
+//        path.add(root.val);
+//        if (root.left != null)
+//            DFS(root.left,target,sum+root.val,new ArrayList<>(path));
+//
+//        if (root.right != null)
+//            DFS(root.right, target, sum+root.val, new ArrayList<>(path));
+//
+//    }
 
-//    Set<List<Integer>> set = new HashSet<>();
     List<List<Integer>> res = new ArrayList<>();
-
+    List<Integer> path = new ArrayList<>();
     public List<List<Integer>> pathSum(TreeNode root, int target) {
-//        List<List<Integer>> res = new ArrayList<>();
         if (root == null)
             return res;
 
-        DFS(root,target,0,new ArrayList<>());
-
-//        Iterator<List<Integer>> iterator = set.iterator();
-//        while (iterator.hasNext())
-//            res.add(iterator.next());
-
+        DFS(root,target);
         return res;
-
     }
 
-    public void DFS(TreeNode root, int target, int sum, List<Integer> path){
-        if (sum+root.val == target && root.left == null && root.right == null){
+    public void DFS(TreeNode root, int target){
+        if (root == null)
+            return;
+        path.add(root.val);
+        target -= root.val;
 
-            path.add(root.val);
-            res.add(path);
+        if (root.val == 0 && root.left == null && root.right == null){
+            res.add(new ArrayList<>(path));
             return;
         }
 
-        // if (sum+root.val > target)
-        //     return;
+        DFS(root.left, target);
+        DFS(root.right, target);
 
-        path.add(root.val);
-        if (root.left != null)
-            DFS(root.left,target,sum+root.val,new ArrayList<>(path));
-
-        if (root.right != null)
-            DFS(root.right, target, sum+root.val, new ArrayList<>(path));
+        //回溯
+        path.remove(path.size()-1);
 
     }
 
     public static void main(String[] args) {
-        Integer[] arr = new Integer[]{1,-2,-3,1,3,-2,null,-1};
+        Integer[] arr = new Integer[]{5,4,8,11,null,13,4,7,2,null,null,5,1};
         TreeNode root = TreeNodeUtil.arrayToTreeNode(arr);
         new Solution34().pathSum(root,-1);
     }
