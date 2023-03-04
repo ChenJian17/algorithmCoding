@@ -1,4 +1,4 @@
-package layOffDays;
+package layOffDays.slidingWindow;
 
 import java.util.ArrayList;
 
