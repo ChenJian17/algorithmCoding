@@ -4,7 +4,7 @@ package pointAtOffer;//English description is not available for the problem. Ple
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution53II {
     public int missingNumber(int[] nums) {
         for (int i =0; i<nums.length; i++) {
             if (nums[i] != i) {
@@ -12,6 +12,21 @@ class Solution {
             }
         }
         return -1;
+
+    }
+
+    public int missingNumber2(int[] nums) {
+        int left = 0, right = nums.length-1;
+        while (left <= right) {
+            int mid = (left+right)/2;
+            if (nums[mid] != mid) {
+                right = mid-1;
+            }else {
+                left = mid+1;
+            }
+        }
+        return left;
+
 
     }
 }
