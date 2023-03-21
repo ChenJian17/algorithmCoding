@@ -21,7 +21,7 @@ class Node {
     }
 }
 */
-class Solution {
+class Solution35 {
     class Node {
         int val;
         Node next;

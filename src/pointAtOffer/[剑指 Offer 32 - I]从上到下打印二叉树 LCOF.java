@@ -18,7 +18,7 @@ import java.util.*;
  *     TreeNode(int x) { val = x; }
  * }
  */
-class Solution {
+class Solution32I {
     public int[] levelOrder(TreeNode root) {
         if (root == null)
             return new int[]{};
