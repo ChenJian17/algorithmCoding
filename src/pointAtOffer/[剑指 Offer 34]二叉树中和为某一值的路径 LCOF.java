@@ -7,6 +7,8 @@ package pointAtOffer;//English description is not available for the problem. Ple
 
 import com.chenjian.cn.util.TreeNode;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -25,7 +27,25 @@ import java.util.List;
  * }
  */
 class Solution34 {
+    LinkedList<List<Integer>> res = new LinkedList<>();
+    LinkedList<Integer> path = new LinkedList<>();
     public List<List<Integer>> pathSum(TreeNode root, int target) {
+        helper(root,target);
+        return res;
+
+    }
+    public void helper(TreeNode root, int target){
+        if (root == null){
+            return;
+        }
+        path.add(root.val);
+        target -= root.val;
+        if (root.left == null && root.right == null && target == 0){
+            res.add(new LinkedList<>(path));
+        }
+        helper(root.left,target);
+        helper(root.right,target);
+        path.removeLast();
 
     }
 }

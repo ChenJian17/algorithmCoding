@@ -19,8 +19,8 @@ class Solution13 {
             + helper(i,j-1,m,n,k,flag)
             + helper(i+1,j,m,n,k,flag)
             + helper(i,j+1,m,n,k,flag);
-//            flag[i][j] = false;
         }
+        return 0;
 
     }
 
