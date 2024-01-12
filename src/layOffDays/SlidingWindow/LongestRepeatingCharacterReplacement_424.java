@@ -1,4 +1,4 @@
-package layOffDays.slidingWindow;
+package layOffDays.SlidingWindow;
 
 import java.util.HashMap;
 import java.util.Map;

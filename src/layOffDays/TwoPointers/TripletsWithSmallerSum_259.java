@@ -1,0 +1,31 @@
+package layOffDays.TwoPointers;
+
+import java.util.Arrays;
+
+/**
+ * @description: some desc
+ * @author: sherlockchen
+ * @date: 2023/9/7 22:19
+ */
+public class TripletsWithSmallerSum_259 {
+
+    public static int threeSumClosest(int[] nums, int target) {
+
+        Arrays.sort(nums);
+        int res = 0;
+        for (int i = 0; i<nums.length-2; i++) {
+            int left = i+1, right = nums.length-1;
+            while (left < right) {
+                int sum = nums[i]+nums[left]+nums[right];
+                if (sum >= target) {
+                    right --;
+                }else {
+                    left++;
+                    res += (right-left);
+                }
+            }
+        }
+        return res;
+    }
+
+}
