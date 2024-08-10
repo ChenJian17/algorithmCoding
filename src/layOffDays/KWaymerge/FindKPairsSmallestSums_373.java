@@ -52,6 +52,36 @@ public class FindKPairsSmallestSums_373 {
         }
     }
 
+
+    public List<List<Integer>> kSmallestPairs1(int[] nums1, int[] nums2, int k) {
+        List<List<Integer>> res = new ArrayList<>();
+        Queue<int[]> queue = new PriorityQueue<>(new Comparator<int[]>() {
+            @Override
+            public int compare(int[] o1, int[] o2) {
+                return o1[0]-o2[0];
+            }
+        });
+
+        for (int i = 0; i< Math.min(nums1.length,k); i++){
+            queue.offer(new int[]{nums1[i]+nums2[0],i,0});
+        }
+
+        while (res.size() < k){
+            int[] arr = queue.poll();
+            int val = arr[0];
+            int i = arr[1];
+            int j = arr[2];
+
+            res.add(List.of(nums1[i], nums2[j]));
+
+            if ((j+1) < nums2.length ){
+                queue.offer(new int[]{nums1[i]+nums2[j+1],i,j+1});
+            }
+        }
+
+        return res;
+    }
+
     public static void main(String[] args) {
         FindKPairsSmallestSums_373 o = new FindKPairsSmallestSums_373();
         int[] nums1 = new int[]{1,1,2};
