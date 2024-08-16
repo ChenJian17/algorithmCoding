@@ -1,4 +1,4 @@
-package top100.hash;
+package top100.twoPointers;
 
 /**
  * @description: some desc
