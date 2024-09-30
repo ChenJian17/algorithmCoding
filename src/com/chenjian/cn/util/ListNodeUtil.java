@@ -18,22 +18,26 @@ public class ListNodeUtil {
         return dummy.next;
     }
 
-    private static volatile int counter = 0;
-    public static void main(String[] args) throws InterruptedException {
-        for (int i = 0; i < 10; i++) {
-            Thread thread = new Thread(() -> {
-                for (int i1 = 0; i1 < 10000; i1++) {
-                    add();
-                }
-            });
-            thread.start();
+    public static void print(ListNode node){
+        while (node != null){
+            System.out.println(node.val);
+            node = node.next;
         }
-        // 等10个线程运行完毕
-        Thread.sleep(1000);
-        System.out.println(counter);
     }
-    public synchronized static void add() {
-        counter++;
+
+    public static void main(String[] args) {
+        String input = "802";
+
+        // 遍历字符串
+        for (int i = 0; i < input.length(); i++) {
+            char character = input.charAt(i);
+            int num = character;
+            System.out.println(num);
+            // 检查字符是否为数字
+            if (Character.isDigit(character)) {
+                System.out.println(character);
+            }
+        }
     }
 
 }
