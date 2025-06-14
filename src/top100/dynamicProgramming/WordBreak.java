@@ -1,8 +1,6 @@
 package top100.dynamicProgramming;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @description: some desc
@@ -59,8 +57,32 @@ public class WordBreak {
 //    }
 
     //动态规划
+    public boolean wordBreak(String s, List<String> wordDict) {
+
+        int maxlen = 0;
+        for (String word: wordDict){
+            maxlen = Math.max(maxlen,word.length());
+        }
+        Set<String> set = new HashSet<>(wordDict);
+
+        boolean[] dp = new boolean[s.length()+1];
+        dp[0] = true;
+
+        for (int i = 1; i<=s.length(); i++){
+            for (int j = i-1; j>=Math.max(i-maxlen,0);j--){
+                String tmp = s.substring(j,i);
+                if (set.contains(tmp) && dp[j]){
+                    dp[i] = true;
+                    break;
+                }
+            }
+        }
+        return dp[s.length()];
+
+    }
 
     public static void main(String[] args) {
+
         Map<Integer,String> map = new HashMap<>();
 
         String sb = "leetcode";
