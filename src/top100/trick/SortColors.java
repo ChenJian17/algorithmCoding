@@ -1,4 +1,4 @@
-package top100;
+package top100.trick;
 
 /**
  * @description: some desc

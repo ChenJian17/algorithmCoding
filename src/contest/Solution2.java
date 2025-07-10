@@ -54,6 +54,7 @@ public class Solution2 {
     }
 
     public static void main(String[] args) {
+
         int[] input = new int[]{18,43,34,16};
         Solution2 solution2 = new Solution2();
         solution2.minSwaps(input);
