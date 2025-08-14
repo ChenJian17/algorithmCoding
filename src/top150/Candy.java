@@ -9,7 +9,8 @@ import java.util.Arrays;
  */
 public class Candy {
     public int candy(int[] ratings) {
-
+        String s = "";
+        s.charAt(0);
         int[] left = new int[ratings.length];
         Arrays.fill(left,1);
         for(int i = 1; i<ratings.length; i++){
